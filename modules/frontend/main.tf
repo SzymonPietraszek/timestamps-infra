@@ -35,6 +35,14 @@ resource "cloudflare_pages_project" "this" {
         "AWS_ACCESS_KEY_SECRET" = {
           type  = "secret_text",
           value = var.backend_access_key.secret
+        },
+        "VITE_ACTIONS" = {
+          type  = "secret_text",
+          value = join(",", var.list_of_actions)
+        }
+        "VITE_TIME_VALUES" = {
+          type  = "secret_text",
+          value = join(",", var.list_of_time_values)
         }
       }
     }

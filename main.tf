@@ -8,6 +8,9 @@ module "backend" {
   github_branch       = var.backend_github.branch
   mangun_handler_path = var.backend_github.mangun_handler_path
   python_version      = var.backend_github.python_version
+  list_of_actions     = var.list_of_actions
+  list_of_time_values = var.list_of_time_values
+
 }
 
 
@@ -25,4 +28,6 @@ module "frontend" {
   github_branch        = var.frontend_github.branch
   backend_url          = module.backend.url
   backend_access_key   = module.backend.access_key
+  list_of_actions      = var.list_of_actions
+  list_of_time_values  = var.list_of_time_values
 }

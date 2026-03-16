@@ -59,3 +59,6 @@ variable "domain_prefix" {
   default     = "szymon-cloudflare-pages"
   description = "This vaule will be used in the final url like https://<domain_prefix>.pages.dev/. It needs to be unique across all Cloudflare Pages projects. If it is not unique, the url will will be created with a random suffix like https://<domain_prefix>-randomsuffix.pages.dev/"
 }
+
+variable "list_of_actions" { type = list(string) }
+variable "list_of_time_values" { type = list(number) }

@@ -8,6 +8,8 @@ variable "domain_prefix" { type = string }
 variable "github_owner" { type = string }
 variable "github_repo" { type = string }
 variable "github_branch" { type = string }
+variable "list_of_actions" { type = list(string) }
+variable "list_of_time_values" { type = list(string) }
 
 variable "backend_url" {
   type      = string

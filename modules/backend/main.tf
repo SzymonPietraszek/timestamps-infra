@@ -50,8 +50,10 @@ resource "aws_lambda_function" "this" {
 
   environment {
     variables = {
-      TABLE_NAME = aws_dynamodb_table.this.name
-      TABLE_PK   = aws_dynamodb_table.this.hash_key
+      TABLE_NAME  = aws_dynamodb_table.this.name
+      TABLE_PK    = aws_dynamodb_table.this.hash_key
+      ACTIONS     = join(",", var.list_of_actions)
+      TIME_VALUES = join(",", var.list_of_time_values)
     }
   }
   # reserved_concurrent_executions = 1
